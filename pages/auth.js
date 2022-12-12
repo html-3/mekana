@@ -1,12 +1,18 @@
 import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
-import { useSession } from '@supabase/auth-helpers-react';
-import Home from '../components/Home';
-import LandingPage from '../components/LandingPage';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import RegisterProfile from '../components/RegisterProfile';
+import { useUserData } from '../context/user';
 
-export default function HomePage() {
-	const session = useSession();
+export default function AuthPage({ hasSession }) {
+	const { session } = useUserData();
+	const router = useRouter();
 
-	return <>{session ? <Home /> : <LandingPage />}</>;
+	useEffect(() => {
+		if (!!session) router.push('/');
+	}, [session]);
+
+	return <>{!hasSession ? <RegisterProfile /> : null}</>;
 }
 
 export async function getServerSideProps(context) {
@@ -16,7 +22,9 @@ export async function getServerSideProps(context) {
 		data: { session },
 	} = await supabase.auth.getSession();
 
-	if (!session) return { props: {} };
+	if (!session) {
+		return { props: {} };
+	}
 
 	const { data: profile } = await supabase
 		.from('profiles')

@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+- [x] Supabase fundamentals [Tutorial](https://www.youtube.com/watch?v=8vqY1KT4TLU)
+- [x] Supabase auth [Tutorial](https://www.youtube.com/watch?v=HMXY4FfyGD4)
+- [ ] Google Login
+- [x] Image upload
+- [ ] Text editor
+- [x] Get more user data
+- [x] Test logout
+- [ ] Improve CSS [TailwindCSS](https://www.youtube.com/watch?v=CQuTF-bkOgc)
+- [ ] Live TEX compiler
+- [ ] Live MD compiler [Milkdown](https://milkdown.dev)
+- [x] React Context API [Tutorial](https://www.youtube.com/watch?v=hUhWtYXgg0I)
+- [x] Forced full registration
 
-First, run the development server:
+https://egghead.io/lessons/supabase-create-a-client-page-that-requires-authentication-in-next-js-using-getserversideprops
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+https://fireship.io/pro
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+https://www.youtube.com/watch?v=tUm1AlaMcMQ&t=351s&ab_channel=Supaship
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+https://fireship.io/courses/supabase/
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+https://www.youtube.com/watch?v=NIq3qLaHCIs&ab_channel=WebDevSimplified
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+https://renatomoor.github.io/storybook-tailwind-foundations/example/?path=/docs/foundations-colors--colors
 
-## Learn More
+https://storybook.developer.spaceone.dev/?path=/story/inputs-datetime-picker--default-with-time-picker
 
-To learn more about Next.js, take a look at the following resources:
+https://egghead.io/lessons/next-js-use-the-notion-api-to-request-block-data-in-next-js
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+https://www.youtube.com/watch?v=04exSpZ9IZ8
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+https://github.com/transitive-bullshit/nextjs-notion-starter-kit
