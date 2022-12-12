@@ -1,4 +1,4 @@
-import supabase from '../../utils/supabase';
+/* import supabase from '../../utils/supabase';
 import { useEffect, useState } from 'react';
 import localDate from '../../functions/localDate';
 import localDateTime from '../../functions/localDateTime';
@@ -97,4 +97,9 @@ export default function PostPage({ post = {} }) {
       </lu>
     </div>
   );
+}
+ */
+
+export default function Post() {
+	return null
 }

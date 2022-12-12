@@ -31,3 +31,7 @@ https://egghead.io/lessons/next-js-use-the-notion-api-to-request-block-data-in-n
 https://www.youtube.com/watch?v=04exSpZ9IZ8
 
 https://github.com/transitive-bullshit/nextjs-notion-starter-kit
+
+https://devrecipes.net/modal-component-with-next-js/
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
