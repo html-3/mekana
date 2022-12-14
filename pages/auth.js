@@ -30,9 +30,8 @@ export async function getServerSideProps(context) {
 		.from('profiles')
 		.select(`*`)
 		.eq('id', session.id)
-		.single();
 
-	if (!profile?.full_name || !profile?.avatar_url || !profile?.username) {
+	if (!Boolean(profile.full_name && profile.avatar_url && profile.username)) {
 		return {
 			redirect: {
 				destination: '/profile',

@@ -81,7 +81,7 @@ export default function PostPage({ post = {} }) {
       <p>{post.content}</p>
       <h2>Live comments</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='text'>Your comment</label>
+        
         <br />
         <input type='text' name='comment' />
         <button type='submit'>Enviar!</button>
@@ -100,6 +100,6 @@ export default function PostPage({ post = {} }) {
 }
  */
 
-export default function Post() {
-	return null
+export default function PostPage() {
+	return <></>;
 }

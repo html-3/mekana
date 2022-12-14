@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import Image from 'next/image';
+import { HiOutlineUserCircle, HiPlus } from 'react-icons/hi2';
 
 export default function Avatar({ userId, url, size, onUpload }) {
 	const supabase = useSupabaseClient();
@@ -13,9 +14,7 @@ export default function Avatar({ userId, url, size, onUpload }) {
 
 	const fetchAvatar = async (avatarPath) => {
 		try {
-			const { data, error } = await supabase.storage
-				.from('avatars')
-				.download(avatarPath);
+			const { data, error } = await supabase.storage.from('avatars').download(avatarPath);
 
 			if (error) throw error;
 
@@ -44,12 +43,10 @@ export default function Avatar({ userId, url, size, onUpload }) {
 			console.log(newFile);
 
 			if (url) {
-				const { error } = await supabase.storage
-					.from('avatars')
-					.update(newFile.name, newFile, {
-						cacheControl: '3600',
-						upsert: false,
-					});
+				const { error } = await supabase.storage.from('avatars').update(newFile.name, newFile, {
+					cacheControl: '3600',
+					upsert: false,
+				});
 
 				if (error) throw error;
 			} else {
@@ -78,50 +75,30 @@ export default function Avatar({ userId, url, size, onUpload }) {
 	};
 
 	return (
-		<div className=' flex align-middle justify-center'>
+		<div className='flex flex-col ml-20 space-y-2 pt-10 w-36'>
 			{avatarUrl ? (
 				<Image
 					src={avatarUrl}
 					alt='Avatar'
-					className=' rounded-lg'
+					className='rounded-full'
 					height={size}
 					width={size}
-					placeholder={
-						<div class='overflow-hidden relative w-10 h-10 bg-what-white rounded-lg dark:bg-base-gray'>
-							<svg
-								class='absolute -left-1 w-12 h-12 text-base-gray'
-								fill='currentColor'
-								viewBox='0 0 20 20'
-								xmlns='http://www.w3.org/2000/svg'
-							>
-								<path
-									fill-rule='evenodd'
-									d='M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z'
-									clip-rule='evenodd'
-								></path>
-							</svg>
-						</div>
-					}
 				/>
-			) : null}
+			) : (
+				<HiOutlineUserCircle className='w-36 h-36 p-4 stroke-2 self-center bg-base-gray text-stone-black rounded-full mb-2' />
+			)}
 			<div className='flex justify-center'>
-				<label
-					className='button'
-					htmlFor='single'
-				>
-					{uploading ? 'Enviando ...' : 'Subir'}
+				<label className='button'>
+					{!uploading ? <p>Subir</p> : <p>Enviando...</p>}
+					<input
+						id='file'
+						className='hidden absolute'
+						type='file'
+						accept='image/*'
+						onChange={uploadAvatar}
+						disabled={uploading}
+					/>
 				</label>
-				<input
-					style={{
-						visibility: 'hidden',
-						position: 'absolute',
-					}}
-					type='file'
-					id='single'
-					accept='image/*'
-					onChange={uploadAvatar}
-					disabled={uploading}
-				/>
 			</div>
 		</div>
 	);

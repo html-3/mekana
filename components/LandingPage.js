@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import { HiChevronDown } from 'react-icons/hi';
 
 export default function LandingPage() {
 	return (
 		<>
-			<div className='w-screen h-screen flex items-center justify-center flex-col space-y-8'>
+			<div className='w-screen h-screen flex items-center justify-center flex-col space-y-8 -translate-y-24'>
 				<div className='self-start w-1/2 text-right'>
 					<h1 className='md:text-6xl text-4xl font-bold md:border-b-6 border-b-4 border-electric-orange '>
 						MEKANA

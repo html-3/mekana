@@ -6,7 +6,7 @@
 - [ ] Text editor
 - [x] Get more user data
 - [x] Test logout
-- [ ] Improve CSS [TailwindCSS](https://www.youtube.com/watch?v=CQuTF-bkOgc)
+- [x] Improve CSS [TailwindCSS](https://www.youtube.com/watch?v=CQuTF-bkOgc)
 - [ ] Live TEX compiler
 - [ ] Live MD compiler [Milkdown](https://milkdown.dev)
 - [x] React Context API [Tutorial](https://www.youtube.com/watch?v=hUhWtYXgg0I)
@@ -35,3 +35,7 @@ https://github.com/transitive-bullshit/nextjs-notion-starter-kit
 https://devrecipes.net/modal-component-with-next-js/
 
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+https://codesandbox.io/s/react-headless-ui-dialog-modal-forked-mmteff?file=/src/App.js
+
+https://developer.mozilla.org/en-US/docs/Web/API/Location#wikiArticle

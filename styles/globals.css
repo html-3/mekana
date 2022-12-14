@@ -29,19 +29,20 @@ h1 {
 	@apply text-stone-black;
 	@apply min-w-120;
 	@apply text-center;
+	@apply transition;
 }
 
 .button:hover {
 	@apply transition;
 	@apply ease-in-out;
 	@apply motion-reduce:transition-none;
-	@apply bg-moody-gray;
-	@apply text-what-white;
+	@apply bg-yellow-punk;
 }
 
 .button:disabled {
-	@apply bg-opacity-75;
+	@apply bg-base-gray;
 	@apply cursor-not-allowed;
+	@apply transition;
 }
 
 .button--nav {
@@ -61,12 +62,13 @@ h1 {
 
 .input {
 	@apply bg-transparent;
-	@apply border-b-2;
+	@apply border-b-4;
 	@apply relative;
 	@apply outline-none;
 	@apply py-2;
 	@apply pr-3;
 	@apply pl-10;
+	@apply border-what-white;
 }
 
 .input:focus {
@@ -81,7 +83,7 @@ h1 {
 	@apply w-full;
 	@apply max-w-md;
 	@apply mt-8;
-	@apply space-y-6;
+	@apply space-y-4;
 	@apply bg-stone-200;
 	@apply rounded-lg;
 	@apply sm:px-6;
@@ -90,4 +92,13 @@ h1 {
 	@apply pt-10;
 	@apply px-3;
 	/* @apply shadow-md; */
+}
+
+.link {
+	@apply text-electric-orange;
+	@apply underline;
+	@apply underline-offset-4;
+	@apply hover:text-yellow-punk;
+	@apply transition;
+	@apply hover:transition;
 }

@@ -3,7 +3,7 @@ import { useSession } from '@supabase/auth-helpers-react';
 import Home from '../components/Home';
 import LandingPage from '../components/LandingPage';
 
-export default function HomePage() {
+export default function HomePage({ profile }) {
 	const session = useSession();
 
 	return <>{session ? <Home /> : <LandingPage />}</>;
@@ -21,10 +21,10 @@ export async function getServerSideProps(context) {
 	const { data: profile } = await supabase
 		.from('profiles')
 		.select(`*`)
-		.eq('id', session.id)
+		.eq('id', session.user.id)
 		.single();
 
-	if (!profile?.full_name || !profile?.avatar_url || !profile?.username) {
+	if (!Boolean(profile.full_name && profile.avatar_url && profile.username)) {
 		return {
 			redirect: {
 				destination: '/profile',

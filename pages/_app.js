@@ -2,7 +2,7 @@ import { NavBar } from '../components/NavBar';
 import { SEOHeader } from '../components/SEOHeader';
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import '../styles/globals.css';
 import UserProvider from '../context/user';
 
@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
 			>
 				<UserProvider>
 					<NavBar />
-					<main className='flex flex-col items-center'>
+					<main className='flex justify-center pt-16 min-h-fit'>
 						<Component {...pageProps} />
 					</main>
 				</UserProvider>

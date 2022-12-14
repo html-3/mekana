@@ -6,30 +6,17 @@ import Profile from '../components/Profile';
 import { useUserData } from '../context/user';
 import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
 
-export default function ProfilePage({ hasSession }) {
-	const { user } = useUserData();
-	const session = useSession();
-
-	const [completion, setCompletion] = useState(false);
-
-	useEffect(() => {
-		if (!!user) {
-			setCompletion(user.full_name && user.avatar_url && user.username);
-		}
-	}, []);
+export default function ProfilePage({ currentUser, initialCompletion, session }) {
+	const [completion, setCompletion] = useState(initialCompletion);
+	console.log(completion);
 
 	return (
-		<>
-			<Profile
-				session={session}
-				onCompletion={setCompletion}
-			/>
-			{completion ? (
-				<Link href='/'>
-					<a className='button'>Voltar</a>
-				</Link>
-			) : null}
-		</>
+		<Profile
+			session={session}
+			initialUser={currentUser}
+			onCompletion={setCompletion}
+			completion={completion}
+		/>
 	);
 }
 
@@ -48,5 +35,37 @@ export async function getServerSideProps(context) {
 			},
 		};
 
-	return { props: { hasSession: false } };
+	const { data: profile, error } = await supabase
+		.from('profiles')
+		.select(`*`)
+		.eq('id', session.user.id)
+		.single();
+
+	if (error)
+		return {
+			props: {
+				currentUser: {
+					id: session.user.id,
+					full_name: '',
+					username: '',
+					avatar_url: '',
+				},
+				completion: false,
+				session: session,
+			},
+		};
+	else {
+		return {
+			props: {
+				currentUser: {
+					id: session.user.id || '',
+					username: profile.username || '',
+					full_name: profile.full_name || '',
+					avatar_url: profile.avatar_url || '',
+				},
+				initialCompletion: Boolean(profile.full_name && profile.avatar_url && profile.username),
+				session: session,
+			},
+		};
+	}
 }
