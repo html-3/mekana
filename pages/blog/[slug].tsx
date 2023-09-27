@@ -1,5 +1,6 @@
 import RenderBlock from '../../components/Blog/RenderBlock';
 import getNotionClient from '../../services/notion';
+import { NotionBlock } from '../../types/NotionBlock';
 
 interface SSProps {
   query: { slug: string };
@@ -8,29 +9,7 @@ interface SSProps {
 interface Props {
   blogPost: {
     object: 'list';
-    results: [
-      {
-        object: string;
-        id: string;
-        parent: {
-          type: string;
-          page_id: string;
-        };
-        created_time: string;
-        last_edited_time: string;
-        created_by: {
-          object: string;
-          id: string;
-        };
-        last_edited_by: {
-          object: string;
-          id: string;
-        };
-        has_children: boolean;
-        archived: boolean;
-        type: string;
-      },
-    ];
+    results: [NotionBlock];
   };
 }
 
@@ -39,8 +18,13 @@ export default function Post({ blogPost }: Props) {
   return (
     <>
       {/* <pre>{JSON.stringify(blogPost, null, 2)}</pre> */}{' '}
-      {blogPost.results.map((block) => {
-        return <RenderBlock block={block} />;
+      {blogPost.results.map((block, index) => {
+        return (
+          <RenderBlock
+            key={index}
+            block={block}
+          />
+        );
       })}{' '}
     </>
   );
