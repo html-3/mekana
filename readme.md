@@ -1,3 +1,5 @@
+# MEKANA
+_Engenharia para montar Mechas_
 
 - [x] Supabase fundamentals [Tutorial](https://www.youtube.com/watch?v=8vqY1KT4TLU)
 - [x] Supabase auth [Tutorial](https://www.youtube.com/watch?v=HMXY4FfyGD4)

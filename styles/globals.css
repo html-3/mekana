@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Electrolize&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,99 +6,22 @@
 
 body,
 html {
-	@apply dark:bg-what-white;
-	@apply dark:text-stone-black;
-	@apply bg-stone-black;
-	@apply text-what-white;
+	@apply dark:bg-alt;
+	@apply dark:text-main;
+	/* @apply bg-main;
+	@apply text-alt; */
 	@apply p-0;
 	@apply m-0;
+  @apply font-roboto;
+	@apply h-full;
 }
 
-h1 {
-	@apply font-extrabold;
-	@apply text-4xl;
-	@apply italic;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-electrolize;
 }
 
-.button {
-	@apply py-2;
-	@apply px-3;
-	@apply font-bold;
-	@apply italic;
-	@apply bg-electric-orange;
-	@apply text-stone-black;
-	@apply min-w-120;
-	@apply text-center;
-	@apply transition;
-}
-
-.button:hover {
-	@apply transition;
-	@apply ease-in-out;
-	@apply motion-reduce:transition-none;
-	@apply bg-yellow-punk;
-}
-
-.button:disabled {
-	@apply bg-base-gray;
-	@apply cursor-not-allowed;
-	@apply transition;
-}
-
-.button--nav {
-	@apply text-what-white;
-	@apply font-bold;
-	@apply italic;
-	@apply border-stone-black;
-}
-
-.button--nav:hover {
-	@apply transition;
-	@apply ease-in-out;
-	@apply motion-reduce:transition-none;
-	@apply border-b-2;
-	@apply border-electric-orange;
-}
-
-.input {
-	@apply bg-transparent;
-	@apply border-b-4;
-	@apply relative;
-	@apply outline-none;
-	@apply py-2;
-	@apply pr-3;
-	@apply pl-10;
-	@apply border-what-white;
-}
-
-.input:focus {
-	@apply outline-none;
-	@apply transition;
-	@apply ease-in-out;
-	@apply motion-reduce:transition-none;
-	@apply border-electric-orange;
-}
-
-.container {
-	@apply w-full;
-	@apply max-w-md;
-	@apply mt-8;
-	@apply space-y-4;
-	@apply bg-stone-200;
-	@apply rounded-lg;
-	@apply sm:px-6;
-	@apply lg:px-8;
-	@apply py-6;
-	@apply pt-10;
-	@apply px-3;
-	/* @apply shadow-md; */
-}
-
-.link {
-	@apply text-electric-orange;
-	@apply underline;
-	@apply underline-offset-4;
-	@apply hover:text-yellow-punk;
-	@apply transition;
-	@apply hover:transition;
-}

@@ -1,29 +1,23 @@
-/* @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: [
-		'./pages/**/*.{js,ts,jsx,tsx}',
-		'./components/**/*.{js,ts,jsx,tsx}',
-	],
-	theme: {
-		extend: {
-			borderWidth: {
-				6: '6px',
-			},
-			minWidth: {
-				120: '120px',
-			},
-			colors: {
-				'electric-orange': '#FB923C',
-				'yellow-punk': '#FACC15',
-				'stone-black': '#1C1917',
-				'what-white': '#F5F5F4',
-				'base-gray': '#A8A29E',
-				'moody-gray': '#414141',
-			},
-			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-			},
-		},
-	},
-	plugins: [],
+  darkMode: 'media',
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+
+    // Or if using `src` directory:
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: { primary: '#FB923C', secondary: '#FACC15', alt: '#1C1917', main: '#F5F5F4' },
+      fontFamily: {
+        bebas: ['Bebas\\ Neue', 'sans-serif'],
+        electrolize: ['Electrolize', 'sans-serif'],
+        roboto: ['Roboto\\ Condensed', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
 };
