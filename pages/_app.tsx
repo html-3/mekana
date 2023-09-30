@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <SEOHead />
-      <div className='dark:bg-alt dark:text-main bg-main text-alt'>
+      <div className='flex flex-col items-center min-h-screen'>
         <Component {...pageProps} />
       </div>
     </>

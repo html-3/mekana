@@ -26,10 +26,10 @@ interface BlogPost {
 
 export default function Blog({ blogPosts }: Props) {
   return (
-    <div>
+    <div className='m-8 max-w-2xl'>
       <h1>Postagens</h1>
       {/* <pre>{JSON.stringify(blogPosts, null, 2)}</pre> */}
-      <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12'>
         {blogPosts.results.map((post, index) => {
           return (
             <Link
@@ -37,15 +37,15 @@ export default function Blog({ blogPosts }: Props) {
               href={`/blog/${slugify(post.id, {
                 strict: true,
               }).toLowerCase()}`}>
-              <div className='group min-h-[80px]'>
-                <h2 className='group-hover:text-secondary'>
+              <div className='group min-h-[80px] space-y-2'>
+                <h2 className='group-hover:text-secondary transition-colors'>
                   {post.properties.title.title[0].plain_text}
                 </h2>
-                <div className=' flex gap-2 flex-wrap'>
+                <div className='flex gap-2 flex-wrap'>
                   {post.properties.tags.multi_select.map((tag, index) => {
                     return (
                       <span
-                        className='bg-stone-400 text-alt px-2 py-0.5 text-sm italic'
+                        className='bg-stone-400 text-alt px-1 py-0.5 text-xs italic'
                         key={index}>
                         {tag.name}
                       </span>

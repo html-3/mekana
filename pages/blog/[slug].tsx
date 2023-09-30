@@ -16,7 +16,7 @@ interface Props {
 export default function Post({ blogPost }: Props) {
   console.log(blogPost.results);
   return (
-    <>
+    <div className='m-8 max-w-2xl'>
       {/* <pre>{JSON.stringify(blogPost, null, 2)}</pre> */}{' '}
       {blogPost.results.map((block, index) => {
         return (
@@ -25,8 +25,8 @@ export default function Post({ blogPost }: Props) {
             block={block}
           />
         );
-      })}{' '}
-    </>
+      })}
+    </div>
   );
 }
 

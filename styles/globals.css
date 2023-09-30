@@ -16,12 +16,32 @@ html {
 	@apply h-full;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
+h1 {
+	@apply text-3xl md:text-5xl;
+  @apply font-electrolize;
+}
+
+h2 {
+	@apply text-xl md:text-[24px];
+  @apply font-electrolize;
+}
+
+h3 {
+	@apply text-lg md:text-xl;
+  @apply font-electrolize;
+}
+
+h4 {
+	@apply md:text-lg;
+  @apply font-electrolize;
+}
+
+h5 {
+  @apply font-electrolize;
+}
+
 h6 {
   @apply font-electrolize;
 }
+
 
